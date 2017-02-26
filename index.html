@@ -61,8 +61,22 @@
 		border: none;
 		color:white;
 	}
+	.clearButton{
+		height:30px;
+		width:70px;
+		background-color: transparent;
+		border-radius: none;
+		border: 1px solid #ff7100;
+		color: #ff7100;
+	}
 
 	</style>
+
+	<script type="text/javascript">
+		function refreshPage(){
+			location.reload();
+		}
+	</script>
 </head>
 	<body>
 		
@@ -77,8 +91,9 @@
 		<div id="controls" style="top:0px;left:55%;">
 			<center>
 				<button class="mybutton" style="margin-left:-150px;" onclick="toggleRecording(this);" >Record</button> 
-				<button  id="save" class="mybutton" style="margin-top:-100px;">Download</button>
+				<a id="save"><button class="mybutton" style="margin-top:-100px;">Download</button></a>
 			</center>
+			<button class="clearButton" style="margin-top:10px; margin-left:-40px" onclick="refreshPage()">Clear</button>
 		</div>
 
 	</body>
