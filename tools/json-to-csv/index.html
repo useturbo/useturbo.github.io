@@ -13,7 +13,7 @@
 <meta name="twitter:creator" content="@useturbo" />
 <meta name="twitter:url" content="https://useturbo.github.io/tools/csv-to-json" />
 
-<link rel="shortcut icon" href="/favicon.png" />
+<link rel="shortcut icon" href="favicon.png" />
 <link rel="canonical" href="https://useturbo.github.io/tools/csv-to-json" />
 
 <!--
@@ -404,24 +404,17 @@ but: only check when on the production domain.
     loadPermalink();
   });
 
-  function saveFileName(){
-    var userInputedName = document.getElementById('uFileName').value;
-    
-      if (userInputedName) {
-          console.log("set filename to ",userInputedName)
-          $('#downloader').prop({
-              'download': userInputedName + ".csv"
-          });
-          // var link = document.getElementById('downloader');
-          // link.download = userInputedName
-      }else{
-        alert("Please name your file before downloading")
-      }
-
-  }
-
-
-
+    function saveFileName(){
+      var userInputedName = document.getElementById('uFileName').value;
+        if (userInputedName) {
+            console.log("set filename to ",userInputedName)
+            $('#downloader').prop({
+                'download': userInputedName + ".csv"
+            });
+        }else{
+          alert("Please name your file before downloading")
+        }
+    }
 </script>
 
 </head>
@@ -463,19 +456,17 @@ but: only check when on the production domain.
     <span class="rendered">
       Below are the first few rows (<span class="rows count"></span> total).
 
-<!--       <span>
-        <input type="text" class="form-control" placeholder="Filename..." id="uFileName">
-      </span> -->
-
       <div class="input-group" style="width:35%">
             <input type="text" id="uFileName" class="form-control" placeholder='Filename...' />
-            <span id="saveFileName" onclick="saveFileName()" class="input-group-addon">Save</span>
+            <span id="saveFileName" onclick="saveFileName()" class="input-group-addon" style="background-color: #ff7100; color:white; border: 1px solid #ff7100;">Save</span>
       </div>
       <br>
 
-      <a id="downloader" href="#" class="btn btn-primary" style="background-color: #ff7100; border-radius: none; color:white">
-        Download the entire CSV</a>
-        <br>
+      <a id="downloader" href="#" class="btn btn-primary" style="background-color: #ff7100; border-radius: 0px; color:white; border: 1px solid #ff7100;">
+        Download the entire CSV
+      </a>
+      
+      <br>
 
       or <a href="#" class="raw">show the raw data</a>.
     </span>
